@@ -1,0 +1,404 @@
+/* 1. Color Variables */
+:root {
+  --background: #08111f;
+  --surface: #101c2e;
+  --surface-hover: #16253a;
+  --text: #f5f7fb;
+  --muted: #a8b4c7;
+  --accent: #6ee7b7;
+  --border: #24344b;
+}
+
+/* 2. Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+main {
+  overflow: hidden;
+}
+
+/* 3. Navigation */
+.navbar {
+  width: 100%;
+  min-height: 82px;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navbar nav a:hover {
+  color: var(--accent);
+}
+
+.nav-cta {
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* 4. Hero Section */
+.hero {
+  min-height: 570px;
+  padding: 110px 8% 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background:
+    radial-gradient(
+      ellipse at 85% 15%,
+      rgba(110, 231, 183, 0.10),
+      transparent 45%
+    ),
+    var(--background);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  max-width: 850px;
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.hero-text {
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--background);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #a0f3d2;
+}
+
+.secondary-btn {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.secondary-btn:hover {
+  background: var(--surface);
+}
+
+.hero-note {
+  margin-top: 35px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* 5. General Sections */
+.section {
+  padding: 90px 8%;
+}
+
+.section h2 {
+  max-width: 760px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.section > p:not(.eyebrow) {
+  max-width: 700px;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+/* 6. Services */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.service-card {
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.service-number {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 22px;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* 7. About Section */
+.about {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about p:not(.eyebrow) {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+/* 8. Contact Section */
+.contact {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact h2 {
+  max-width: 800px;
+}
+
+.contact > p:not(.eyebrow) {
+  max-width: 650px;
+  margin-bottom: 28px;
+}
+
+/* 9. Footer */
+footer {
+  padding: 26px 8%;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+/* 10. Service Card Reveal Animation */
+.service-card.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    border-color 0.25s ease;
+}
+
+.service-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 11. Tablet Layout */
+@media (max-width: 850px) {
+  .navbar {
+    padding: 18px 5%;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    gap: 18px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero,
+  .section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/* 12. Mobile Layout */
+@media (max-width: 560px) {
+  .navbar {
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .navbar nav a {
+    font-size: 0.85rem;
+  }
+
+  .nav-cta {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 85px;
+    padding-bottom: 75px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 11vw, 3.5rem);
+    letter-spacing: -1px;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+  }
+
+  .section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 24px;
+  }
+
+  footer {
+    padding: 24px 5%;
+  }
+}
+
+/* 13. Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
